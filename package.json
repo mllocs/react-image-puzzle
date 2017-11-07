@@ -1,11 +1,11 @@
 {
-  "name": "react-component-example",
+  "name": "react-image-puzzle",
   "version": "0.1.0",
-  "description": "React component example",
+  "description": "React component to create a puzzle out of an image",
   "main": "build/index.js",
   "scripts": {
-    "build": "babel lib -d build",
-    "build:watch": "babel lib -w -d build",
+    "build": "babel src -d build",
+    "build:watch": "babel src -w -d build",
     "prepublish": "npm run build"
   },
   "author": "Màxim Colls",
@@ -16,7 +16,10 @@
     "babel-eslint": "^8.0.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
+    "react-dnd": "^2.5.4",
+    "react-dnd-html5-backend": "^2.5.4",
     "styled-components": "^2.2.3"
   }
 }

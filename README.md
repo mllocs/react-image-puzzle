@@ -1,33 +1,27 @@
-# React Component Example
+# React Image Puzzle
 
-A minimal setup to develop and publish a React Component.
+Create a simple swap tile puzzle out of an image.
 
-## Steps
+## Example
 
-1. Clone this repo:
-
-```bash
-git clone git@github.com:mllocs/react-component-example.git
-```
-
-2. Edit the `package.json` (update the component name, author, ...).
-
-3. Install the npm packages, link the library and run the build watch if you want to work on the component while testing it from another project:
-
-```bash
-npm install
-npm link
-npm run build:watch
-```
-
-4. Use the component from another project. From the root of the other project run:
-
-```bash
-npm link react-component-example # Update accordingly
-```
-
-and use it as you would use any other component:
+![](http://g.recordit.co/jUGS1IjwCH.gif)
 
 ```js
-import Example from 'react-component-example'; // Update accordingly
+import { render } from 'react-dom';
+import Puzzle from 'react-image-puzzle';
+
+render(
+  <Puzzle
+    image='https://upload.wikimedia.org/wikipedia/en/6/68/John_Coltrane_-_Blue_Train.jpg'
+  />,
+  document.getElementById('root')
+);
 ```
+
+Property | Type     | Required | Default value | Description
+:---     | :---     | :---     | :---          | :---
+image    | string   | yes      |               | image url for the puzzle
+size     | number   | no       | 300           | side size of the image
+level    | number   | no       | 3             | number of cells per side
+onDone   | funciton | no       |               | callback when the puzzle is completed
+-----
