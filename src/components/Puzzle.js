@@ -3,7 +3,23 @@ import PropTypes from 'prop-types';
 import Cell from './Cell';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DragDropContext } from 'react-dnd';
-import { shuffle } from '../lib/utils';
+
+/**
+ * Shuffles the passed array and returns a new one
+ *
+ * @param  {Array} a
+ * @return {Array}
+ */
+function shuffle(a) {
+  const b = a.slice();
+
+  for (let i = b.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [b[i], b[j]] = [b[j], b[i]];
+  }
+
+  return b;
+}
 
 class Puzzle extends React.Component {
   constructor(props) {
